@@ -1,7 +1,8 @@
 {
     "author": "ScottC",
     "compatibility": [
-        1
+        1,
+        2
     ],
     "description": "Convert DTS streams into Dolby Digital",
     "icon": "https://raw.githubusercontent.com/Josh5/unmanic.plugin.dts_to_dd/master/icon.png",
