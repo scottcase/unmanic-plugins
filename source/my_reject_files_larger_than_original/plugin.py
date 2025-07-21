@@ -72,6 +72,28 @@ def file_marked_as_failed(settings, path):
     # Default to...
     return False
 
+def file_marked_as_failed_testing(settings, path):
+    """Read directory info to check if file was previously marked as failed"""
+    if settings.get_setting('if_end_result_file_is_still_larger_mark_as_ignore'):
+        directory_info = UnmanicDirectoryInfo(os.path.dirname(path))
+
+        try:
+            previously_failed = directory_info.get('reject_files_larger_than_original', os.path.basename(path))
+        except NoSectionError as e:
+            previously_failed = ''
+        except NoOptionError as e:
+            previously_failed = ''
+        except Exception as e:
+            logger.debug("Unknown exception {}.".format(e))
+            previously_failed = ''
+
+        if previously_failed:
+            # This stream already has been attempted and failed
+            return True
+
+    # Default to...
+    return False
+
 
 def write_file_marked_as_failed(path):
     """Write entry to directory infor to mark this file as failed"""
@@ -109,8 +131,11 @@ def on_library_management_file_test(data):
                     'message': "File '{}' should be ignored because it is marked as Ignoring.1".format(abspath),
                 })
     else:
+        directory_info = UnmanicDirectoryInfo(os.path.dirname(abspath))
+        previously_failed = directory_info.get('reject_files_larger_than_original', os.path.basename(abspath))
+
         data['add_file_to_pending_tasks'] = False
         data['issues'].append({
                     'id':      'Ignore files by Marked As Ignoring2',
-                    'message': "File '{}' should be ignored because it is marked as Ignoring.2".format(abspath),
+                    'message': "File '{}' should be ignored because it is marked as Ignoring.2 PF: '{}'".format(abspath, previously_failed),
         })
