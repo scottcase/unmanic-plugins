@@ -1,4 +1,4 @@
-# Reject File if Larger than Original
+# My Reject File if Larger than Original
 Plugin for [Unmanic](https://github.com/Unmanic)
 
 ---
