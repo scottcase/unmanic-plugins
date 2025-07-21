@@ -132,10 +132,12 @@ def on_library_management_file_test(data):
                 })
     else:
         directory_info = UnmanicDirectoryInfo(os.path.dirname(abspath))
-        previously_failed = directory_info.get('reject_files_larger_than_original', os.path.basename(abspath))
+        file_name_lower = os.path.basename(abspath)
+        file_name_lower = file_name_lower.lower()
+        previously_failed = directory_info.get('reject_files_larger_than_original', file_name_lower)
 
         data['add_file_to_pending_tasks'] = False
         data['issues'].append({
                     'id':      'Ignore files by Marked As Ignoring2',
-                    'message': "File '{}' should be ignored because it is marked as Ignoring.2 PF: '{}' FN: '{}'".format(abspath, previously_failed, os.path.basename(abspath)),
+                    'message': "File '{}' should be ignored because it is marked as Ignoring.2 PF: '{}' FN: '{}'".format(abspath, previously_failed, file_name_lower),
         })
