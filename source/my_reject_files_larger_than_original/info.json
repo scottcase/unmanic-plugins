@@ -5,8 +5,8 @@
     ],
     "description": "This plugin will reset the current working file to the original source if it is larger than the original source.",
     "icon": "https://raw.githubusercontent.com/Unmanic/plugin.reject_files_larger_than_original/master/icon.png",
-    "id": "reject_files_larger_than_original",
-    "name": "Reject File if Larger than Original",
+    "id": "my_reject_files_larger_than_original",
+    "name": "My Reject File if Larger than Original",
     "platform": [
         "all"
     ],
