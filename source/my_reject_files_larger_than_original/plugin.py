@@ -106,11 +106,11 @@ def on_library_management_file_test(data):
         data['add_file_to_pending_tasks'] = False
         data['issues'].append({
                     'id':      'Ignore files by Marked As Ignoring1',
-                    'message': "File '{}' should ignored because it is marked as Ignoring.".format(abspath),
+                    'message': "File '{}' should be ignored because it is marked as Ignoring.1".format(abspath),
                 })
     else:
         data['add_file_to_pending_tasks'] = False
         data['issues'].append({
                     'id':      'Ignore files by Marked As Ignoring2',
-                    'message': "File '{}' should ignored because it is marked as Ignoring.".format(abspath),
+                    'message': "File '{}' should be ignored because it is marked as Ignoring.2".format(abspath),
         })
