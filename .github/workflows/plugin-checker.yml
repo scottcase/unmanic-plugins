@@ -148,6 +148,7 @@ jobs:
     steps:
 
     # Fetch and read sucess file
+    # echo ::set-output name=IS_SUCCESS::${IS_SUCCESS}
     - name: Download success file from previous job
       uses: actions/download-artifact@v4
       with:
@@ -156,7 +157,7 @@ jobs:
       id: previous_jobs_success
       run: |
         IS_SUCCESS=$(cat ./artifacts/success_file/success_file.txt)
-        echo ::set-output name=IS_SUCCESS::${IS_SUCCESS}
+        echo "IS_SUCCESS=${IS_SUCCESS}" >> $GITHUB_OUTPUT
         rm -rfv ./artifacts
 
     # Checkout
