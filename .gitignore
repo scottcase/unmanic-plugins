@@ -35,3 +35,4 @@ template/
 
 # Plugin site-packages
 source/**/site-packages/**
+/source/convert_subtitle_streams_ass_to_srt/
