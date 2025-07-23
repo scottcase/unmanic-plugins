@@ -81,6 +81,6 @@ def on_library_management_file_test(data):
     if not ensure_last_modified_time_on_file(data.get('path'), minimum_age):
         # Ignore this file
         data['add_file_to_pending_tasks'] = False
-        logger.debug("File found to be newer than the minimum ignore time of '{}'. Ignoring!".format(minimum_age))
+        logger.info("File found to be newer than the minimum ignore time of '{}'. Ignoring!".format(minimum_age))
 
     return data
