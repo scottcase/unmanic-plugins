@@ -7,7 +7,7 @@
     "description": "Ignore files recently modified on disk.",
     "icon": "https://raw.githubusercontent.com/Josh5/unmanic.plugin.ignore_files_recently_modified/master/icon.png",
     "id": "my_ignore_files_recently_modified",
-    "name": "Ignore files recently modified",
+    "name": "My Ignore files recently modified",
     "platform": [
         "all"
     ],

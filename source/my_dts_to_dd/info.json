@@ -7,7 +7,7 @@
     "description": "Convert DTS streams into Dolby Digital",
     "icon": "https://raw.githubusercontent.com/Josh5/unmanic.plugin.dts_to_dd/master/icon.png",
     "id": "my_dts_to_dd",
-    "name": "Convert DTS to Dolby Digital",
+    "name": "My Convert DTS to Dolby Digital",
     "priorities": {
         "on_worker_process": 0
     },
