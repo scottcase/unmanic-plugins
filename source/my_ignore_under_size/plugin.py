@@ -72,7 +72,7 @@ def on_library_management_file_test(data):
     if check_file_size_under_max_file_size(data.get('path'), minimum_file_size):
         # Ignore this file
         data['add_file_to_pending_tasks'] = False
-        logger.debug("File '{}' should ignored because it is under the configured minimum size '{}'.".format(
+        logger.debug("File '{}' should be ignored because it is under the configured minimum size '{}'.".format(
             data.get('path'), minimum_file_size))
 
     return data
