@@ -26,7 +26,7 @@ import os
 
 from unmanic.libs.unplugins.settings import PluginSettings
 
-from my_encoder_audio_ac3.lib.ffmpeg import StreamMapper, Probe, Parser
+from encoder_audio_ac3.lib.ffmpeg import StreamMapper, Probe, Parser
 
 # Configure plugin logger
 logger = logging.getLogger("Unmanic.Plugin.encoder_audio_ac3")
@@ -159,16 +159,10 @@ class PluginStreamMapper(StreamMapper):
             channels))
         return '640'
 
-    def test_stream_needs_processingORIGONE(self, stream_info: dict):
-        # Ignore streams already of the required codec_name
-        if stream_info.get('codec_name').lower() in [self.codec]:
-            return False
-        return True
-
     def stream_needs_processing(self, stream_info: dict) -> bool:
         codec = str(stream_info.get("codec_name") or "").strip().casefold()
         targets = {str(c).strip().casefold() for c in (self.codec, self.codec2) if c}
-        return not codec or codec not in targets
+        return not codec or not targets or codec not in targets
 
     def custom_stream_mapping(self, stream_info: dict, stream_id: int):
         stream_encoding = ['-c:a:{}'.format(stream_id), self.encoder]
