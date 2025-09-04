@@ -159,7 +159,7 @@ class PluginStreamMapper(StreamMapper):
             channels))
         return '640'
 
-    def stream_needs_processing(self, stream_info: dict) -> bool:
+    def test_stream_needs_processing(self, stream_info: dict) -> bool:
         codec = str(stream_info.get("codec_name") or "").strip().casefold()
         targets = {str(c).strip().casefold() for c in (self.codec, self.codec2) if c}
         return not codec or not targets or codec not in targets

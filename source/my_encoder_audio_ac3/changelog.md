@@ -1,4 +1,7 @@
 
+**<span style="color:#56adda">0.0.10</span>**
+- update test_stream_needs_processing.
+- 
 **<span style="color:#56adda">0.0.9</span>**
 - add option to also ignore eac3 audio.
 
