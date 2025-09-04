@@ -1,0 +1,65 @@
+{
+    "repo": {
+        "id": "repository.scottcase",
+        "name": "Scotts Unmanic Plugins Repo.",
+        "icon": "",
+        "repo_data_directory": "https://raw.githubusercontent.com/scottcase/unmanic-plugins/repo/",
+        "repo_data_url": "https://raw.githubusercontent.com/scottcase/unmanic-plugins/repo/repo.json"
+    },
+    "plugins": [
+        {
+            "author": "ScottC",
+            "compatibility": [
+                1,
+                2
+            ],
+            "description": "Ignore files under the configured size.",
+            "icon": "https://raw.githubusercontent.com/Unmanic/plugin.ignore_under_size/master/icon.png",
+            "id": "my_ignore_under_size",
+            "name": "My Ignore files under size",
+            "platform": [
+                "all"
+            ],
+            "priorities": {
+                "on_library_management_file_test": 2
+            },
+            "tags": "library file test",
+            "version": "0.0.5"
+        },
+        {
+            "author": "ScottC",
+            "compatibility": [
+                2
+            ],
+            "description": "Ensure all audio streams are encoded with the AC3 codec using the native FFmpeg ac3 encoder.",
+            "icon": "https://raw.githubusercontent.com/Unmanic/plugin.encoder_audio_ac3/master/icon.png",
+            "id": "my_encoder_audio_ac3",
+            "name": "My Audio Encoder AC3",
+            "platform": [
+                "all"
+            ],
+            "priorities": {
+                "on_library_management_file_test": 99,
+                "on_worker_process": 0
+            },
+            "tags": "audio,encoder,ffmpeg,library file test",
+            "version": "0.0.10"
+        },
+        {
+            "author": "ScottC",
+            "compatibility": [
+                1,
+                2
+            ],
+            "description": "Convert DTS streams into Dolby Digital",
+            "icon": "https://raw.githubusercontent.com/Josh5/unmanic.plugin.dts_to_dd/master/icon.png",
+            "id": "my_dts_to_dd",
+            "name": "My Convert DTS to Dolby Digital",
+            "priorities": {
+                "on_worker_process": 0
+            },
+            "tags": "audio,ffmpeg,library file test",
+            "version": "0.0.5"
+        }
+    ]
+}
